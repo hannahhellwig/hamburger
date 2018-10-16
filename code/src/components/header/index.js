@@ -5,13 +5,26 @@ import "./style.css"
 
 class Header extends React.Component {
 
+  state = {
+    isActive: false
+  }
+
+  toggleActive = () => {
+    const currentActiveState = this.state.isActive
+    this.setState({ isActive: !currentActiveState }) // ! means the oposit //
+  }
+
   render() {
+    // let hamburgerClass = "hamburger"
+    // if (this.stateisActive) {
+    //   hamburgerClass = "hamburger active"
+    // }
+
     return (
       <header>
-        <input
-          id="hamburger"
-          className="hamburger-checkbox"
-          type="checkbox" />
+        <input id="hamburger" className="hamburger-checkbox" type="checkbox" />
+        {/* <label className={hamburgerClass}> */}
+        {/* change all .hamburger-checkbox:checked ~  into .active */}
         <label htmlFor="hamburger" className="hamburger-label">
           <div className="bar1" />
           <div className="bar2" />
